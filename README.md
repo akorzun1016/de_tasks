@@ -24,7 +24,7 @@ A code written in Python 3.x is expected.
 * Suppose we can have multiple types of absense.
 * Some records can cover same periods. Think of the way to split them and put it in the code.
 
-
+---
 
 ## Task 2. BigQuery.
 Please, explore the following documentation for BigQuery Pricing:
@@ -43,7 +43,7 @@ For the purpose of the task, to_type values equal to 10 bytes, all other String 
 
 * a view: data_per_fam_view:
 
-`
+
 	select 
 		t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date, 
 		t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2, 
@@ -59,7 +59,7 @@ For the purpose of the task, to_type values equal to 10 bytes, all other String 
 	left join d_unv t4
 		on t1.unv_num  = t4.unv_num 
 	where t1.date>='2018-01-01';
-`
+
 
 Please check the following queries:
 1. `select * from data_per_fam where date='2020-07-01'`
