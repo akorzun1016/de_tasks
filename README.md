@@ -45,19 +45,19 @@ For the purpose of the task, to_type values equal to 10 bytes, all other String 
 
 
 	`select`   
-	`	t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date,`  
-	`	t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2,`  
-	`	t1.kpi3, t1.comp_kpi3, t1.kpi4, t1.comp_kpi4,`
-	`	t2.fam_name_eng, t2.fam_name_rus,`   
-	`	t3.sto_name_eng, t3.sto_name_rus,`  
-	`	t4.unv_name_eng, t4.unv_name_rus`     
+	`   t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date,`  
+	`   t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2,`  
+	`   t1.kpi3, t1.comp_kpi3, t1.kpi4, t1.comp_kpi4,`
+	`   t2.fam_name_eng, t2.fam_name_rus,`   
+	`   t3.sto_name_eng, t3.sto_name_rus,`  
+	`   t4.unv_name_eng, t4.unv_name_rus`     
 	`from data_per_fam t1`  
 	`left join d_fam t2`  
-	`	on t1.fam_num = t2.fam_num`  
+	`   on t1.fam_num = t2.fam_num`  
 	`left join d_sto t3`   
-	`	on t1.sto_num = t3.sto_num`  
+	`   on t1.sto_num = t3.sto_num`  
 	`left join d_unv t4`  
-	`	on t1.unv_num  = t4.unv_num`  
+	`   on t1.unv_num  = t4.unv_num`  
 	`where t1.date>='2018-01-01';`  
 
 
