@@ -22,4 +22,4 @@ A code written in Python 3.x is expected.
 
 ### Additional challenges.
 * Suppose we can have multiple types of absense.
-* Some absenses can cover the same dates. Think of the way to split it and put it in the code.
+* Some records can cover the same periods. Think of the way to split them and put it in the code.
