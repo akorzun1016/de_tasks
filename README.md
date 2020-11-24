@@ -35,7 +35,7 @@ Suppose we have 4 tables and 1 view on hand:
 * a table: data_per_fam - huge, approx. 20000 records per day, 6 Gb of data
 
 Schema:
-[to_type:STRING, sto_num:INT, unv_num:INT, fam_num:INT, date:DATE, kpi1:FLOAT, comp_kpi1:FLOAT, kpi2:FLOAT, comp_kpi2:FLOAT, kpi3:INT, comp_kpi3:INT, kpi4:INT, comp_kpi4:INT, sto_rus_name:STRING, sto_eng_name:STRING, unv_name_eng:STRING, unv_name_rus:STRING, fam_name_eng:STRING, fam_name_rus:STRING]
+`to_type:STRING, sto_num:INT, unv_num:INT, fam_num:INT, date:DATE, kpi1:FLOAT, comp_kpi1:FLOAT, kpi2:FLOAT, comp_kpi2:FLOAT, kpi3:INT, comp_kpi3:INT, kpi4:INT, comp_kpi4:INT, sto_rus_name:STRING, sto_eng_name:STRING, unv_name_eng:STRING, unv_name_rus:STRING, fam_name_eng:STRING, fam_name_rus:STRING`
 
 For the purpose of the task, to_type values equal to 10 bytes, all other String field values = 30 bytes.
 
@@ -43,7 +43,7 @@ For the purpose of the task, to_type values equal to 10 bytes, all other String 
 
 * data_per_fam_view, with code:
 
-"select 
+`select 
 	t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date, 
 	t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2, 
 	t1.kpi3, t1.comp_kpi3, t1.kpi4, t1.comp_kpi4,
@@ -57,13 +57,13 @@ left join d_sto t3
 	on t1.sto_num = t3.sto_num
 left join d_unv t4
 	on t1.unv_num  = t4.unv_num 
-where t1.date>='2018-01-01';"
+where t1.date>='2018-01-01';`
 
 Please check the following queries:
-1. "select * from data_per_fam where date='2020-07-01'"
-2. "select * from data_per_fam where date between '2018-01-01' and '2018-12-31'"
-3. "select * from data_per_fam_view where date='2020-07-01'"
-4. "select * from data_per_fam_view where date between '2018-01-01' and '2018-12-31'"
+1. `select * from data_per_fam where date='2020-07-01'`
+2. `select * from data_per_fam where date between '2018-01-01' and '2018-12-31'`
+3. `select * from data_per_fam_view where date='2020-07-01'`
+4. `select * from data_per_fam_view where date between '2018-01-01' and '2018-12-31'`
 
 And for each of them answer the following questions:
 - How much data (appr.) will be consumed by running this query?
