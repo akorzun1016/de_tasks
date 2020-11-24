@@ -27,9 +27,9 @@ A code written in Python 3.x is expected.
 
 
 ## Task 2. BigQuery.
-Please, explore the following documentation for BigQuery Pricing.
+Please, explore the following documentation for BigQuery Pricing:
 
-[Long read!](https://cloud.google.com/bigquery/pricing#on_demand_pricing)
+[On demand pricing](https://cloud.google.com/bigquery/pricing#on_demand_pricing)
 
 Suppose we have 4 tables and 1 view on hand:
 * a table: data_per_fam - huge, approx. 20000 records per day, 6 Gb of data
@@ -43,35 +43,23 @@ For the purpose of the task, to_type values equal to 10 bytes, all other String 
 
 * a view: data_per_fam_view:
 
-`select 
-	
-t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date, 
-	
-t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2, 
-	
-t1.kpi3, t1.comp_kpi3, t1.kpi4, t1.comp_kpi4,
-	
-t2.fam_name_eng, t2.fam_name_rus, 
-	
-t3.sto_name_eng, t3.sto_name_rus, 
-	
-t4.unv_name_eng, t4.unv_name_rus   
-
-from data_per_fam t1
-
-left join d_fam t2
-	
-	on t1.fam_num = t2.fam_num
-
-left join d_sto t3 
-	
-	on t1.sto_num = t3.sto_num
-
-left join d_unv t4
-	
-	on t1.unv_num  = t4.unv_num 
-
-where t1.date>='2018-01-01';`
+`
+	select 
+		t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date, 
+		t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2, 
+		t1.kpi3, t1.comp_kpi3, t1.kpi4, t1.comp_kpi4,
+		t2.fam_name_eng, t2.fam_name_rus, 
+		t3.sto_name_eng, t3.sto_name_rus, 
+		t4.unv_name_eng, t4.unv_name_rus   
+	from data_per_fam t1
+	left join d_fam t2
+		on t1.fam_num = t2.fam_num
+	left join d_sto t3 
+		on t1.sto_num = t3.sto_num
+	left join d_unv t4
+		on t1.unv_num  = t4.unv_num 
+	where t1.date>='2018-01-01';
+`
 
 Please check the following queries:
 1. `select * from data_per_fam where date='2020-07-01'`
