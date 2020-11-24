@@ -7,7 +7,7 @@ employee,type_of_absence,start_date,end_date,duration
 
 You were given access to Employees data via an API and was able
 to acquire records of employees absence (Vacations or Business trips).
-[data][tas1_data/response.data]
+[data](tas1_data/response.data)
 Every record holds all the necessary data:
 - user
 - type of absence
