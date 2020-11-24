@@ -33,6 +33,7 @@ Please, explore the following documentation for BigQuery Pricing.
 
 Suppose we have 4 tables and 1 view on hand:
 * a table: data_per_fam - huge, approx. 20000 records per day, 6 Gb of data
+
 Schema:
 [to_type:STRING, sto_num:INT, unv_num:INT, fam_num:INT, date:DATE, kpi1:FLOAT, comp_kpi1:FLOAT, kpi2:FLOAT, comp_kpi2:FLOAT, kpi3:INT, comp_kpi3:INT, kpi4:INT, comp_kpi4:INT, sto_rus_name:STRING, sto_eng_name:STRING, unv_name_eng:STRING, unv_name_rus:STRING, fam_name_eng:STRING, fam_name_rus:STRING]
 
@@ -41,6 +42,7 @@ For the purpose of the task, to_type values equal to 10 bytes, all other String 
 * 3 tables: d_fam, d_unv, d_sto - very small, 300 KB of data
 
 * data_per_fam_view, with code:
+
 "select 
 	t1.to_type, t1.sto_num, t1.unv_num, t1.fam_num, t1.date, 
 	t1.kpi1, t1.comp_kpi1, t1.kpi2, t1.comp_kpi2, 
